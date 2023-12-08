@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Tatts</title>
 </head>
 <body>
-    Hello over there!!!
+    <header class="header">
+        <div class="header__logo-container">
+            <img src="./images/icons/water-drops.svg" alt="Water drops"/>
+            <h1 class="header__logo-label">Tatts</h1>
+        </div>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a class="navigation__link" href="#">Наши работы</a></li>
+                <li class="navigation__item"><a class="navigation__link" href="#">Запись</a></li>
+                <li class="navigation__item"><a class="navigation__link" href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <img class="about-section__image" src="./images/about-section.png" alt="About section tattoo image"/>
+            <div class="about-section__description-text">
+                <h2 class="about-section__heading">О нас:</h2>
+                <ul class="about-section__list">
+                    <li class="about-section__item">Широкий спектр услуг, включающих в себя различные стили и техники татуировки, татуажа губ и бровей.</li>
+                    <li class="about-section__item">Мы строго соблюдаем все требования по стерилизации инструментов и применяем только сертифицированные и безопасные красители.</li>
+                    <li class="about-section__item">Наша команда готова выполнять безболезненное и безопасное удаление татуировок с помощью современной техники. </li>
+                </ul>
+
+                <h3 class="about-section__invitation">Мы с нетерпением ждём вас в нашем тату-салоне</h3>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
