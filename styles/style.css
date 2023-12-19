@@ -2,6 +2,10 @@
     --background-color: #08101F;
     --text-basic: #FFFFFF;
     --primary: #4A98D0;
+
+    --arrow-border: 2px solid #ffffff;
+
+    --fade-animation-duration: 500ms;
 }
 
 body {
@@ -18,6 +22,10 @@ body {
 h1, ul {
     margin: 0;
     padding: 0;
+}
+
+.hidden {
+    display: none;
 }
 
 .header {
@@ -60,6 +68,7 @@ h1, ul {
     text-decoration: none;
     font-size: 18px;
     position: relative;
+
 	&:before {
 		content: "";
 		position: absolute;
@@ -72,6 +81,7 @@ h1, ul {
 		transform: scaleX(0);
 		transition: all 0.4s ease-in-out 0s;
 	}
+
 	&:hover:before {
 		visibility: visible;
 		transform: scaleX(1);
@@ -126,10 +136,13 @@ h1, ul {
 }
 
 .gallery {
+
     margin: 256px 0 0 0;
 }
 
 .gallery__carousel {
+    display: flex;
+    overflow: hidden;
 }
 
 .gallery__heading {
@@ -147,28 +160,63 @@ h1, ul {
     margin: 0 0 0 12px;
 }
 
-.zapis {
+.gallery__carousel-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.gallery__button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.gallery__carousel-previous::before {
+    content: " ";
+    border-left: var(--arrow-border);
+    border-bottom: var(--arrow-border);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: block;
+}
+
+.gallery__carousel-next::before {
+    content: " ";
+    border-right: var(--arrow-border);
+    border-top: var(--arrow-border);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: block;
+}
+
+.feedback-form {
     margin: 256px 0 0 0; 
     display: flex; 
     flex: 1;
     justify-content: space-between;  
 }
 
-.zapis__heading {
+.feedback-form__heading {
     margin: 126px 0 0 0;
     font-size: 30px;
     font-weight: 700;
     
 }
 
-.appointment-section__image-left {
+.feedback-form__image-left {
     z-index: -1;
     object-fit: contain;
     height: 780px;
     left: 0;
 }
 
-.appointment-section__image-right {
+.feedback-form__image-right {
     z-index: -1;
     object-fit: contain;
     height: 780px;
@@ -176,3 +224,32 @@ h1, ul {
     margin: 0 0 0 0;
 }
 
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: var(--fade-animation-duration);
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: var(--fade-animation-duration);
+}
