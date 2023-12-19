@@ -8,6 +8,36 @@
     --fade-animation-duration: 500ms;
 }
 
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: var(--fade-animation-duration);
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: var(--fade-animation-duration);
+}
+
 body {
     background-color: var(--background-color);
     margin: 0;
@@ -136,7 +166,6 @@ h1, ul {
 }
 
 .gallery {
-
     margin: 256px 0 0 0;
 }
 
@@ -161,6 +190,7 @@ h1, ul {
 }
 
 .gallery__carousel-wrapper {
+    margin: 64px 0 0 0;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -195,61 +225,117 @@ h1, ul {
     display: block;
 }
 
-.feedback-form {
+.feedback {
     margin: 256px 0 0 0; 
-    display: flex; 
+    display: flex;
+    align-items: center;
     flex: 1;
-    justify-content: space-between;  
+    position: relative;
+
+    flex-direction: column;
 }
 
-.feedback-form__heading {
+.feedback__heading {
     margin: 126px 0 0 0;
     font-size: 30px;
     font-weight: 700;
-    
+    text-align: center;
 }
 
-.feedback-form__image-left {
-    z-index: -1;
-    object-fit: contain;
-    height: 780px;
+.feedback__image-left {
+    position: absolute;
     left: 0;
-}
 
-.feedback-form__image-right {
     z-index: -1;
     object-fit: contain;
     height: 780px;
+}
+
+.feedback__image-right {
     right: 0;
-    margin: 0 0 0 0;
+    position: absolute;
+
+    z-index: -1;
+    object-fit: contain;
+    height: 780px;
 }
 
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    
-    to {
-        opacity: 0;
-    }
+.feedback__form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    
-    to {
-        opacity: 1;
-    }
+.feedback__field-wrapper {
+    margin: 32px 0 0 0;
+    position: relative;
 }
 
-.fade-out {
-    animation-name: fade-out;
-    animation-duration: var(--fade-animation-duration);
+.feedback__form input {
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+    padding-top: 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 34px;
 }
 
-.fade-in {
-    animation-name: fade-in;
-    animation-duration: var(--fade-animation-duration);
+.feedback__form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid var(--primary);
+}
+  
+.content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+    color: var(--primary);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.feedback__form input:focus {
+    outline: none;
+}
+
+.feedback__form input:focus + .label-name .content-name,
+.feedback__form input:valid + .label-name .content-name {
+    transform: translateY(-130%);
+    font-size: 20px;
+    left: 0px;
+    color: var(--primary);
+}
+.feedback__form input:focus + .label-name::after,
+.feedback__form input:valid + .label-name::after {
+    transform: translateX(0%);
+}
+
+.feedback__button-wrapper {
+    display: flex;
+    justify-content: end;
+}
+
+.feedback__button {
+    margin: 28px 0 0 0;
+    max-width: 120px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    background-color: transparent;
+
+    color: var(--primary);
+
+    outline: none;
+    border: none;
+    cursor: pointer;
 }

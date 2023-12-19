@@ -48,10 +48,28 @@
                 <button class="gallery__button gallery__carousel-next"></button>
             </div>
         </section>
-        <section class="feedback-form">
-            <img class="feedback-form__image-left" src="./images/left.png" alt="Appointment section tattoo image"/>
-            <h2 class="feedback-form__heading">Запишитесь на сеанс</h2>
-            <img class="feedback-form__image-right" src="./images/right.png" alt="Appointment section tattoo image"/>
+        <section class="feedback">
+            <img class="feedback__image-left" src="./images/left.png" alt="Appointment section tattoo image"/>
+            <h2 class="feedback__heading">Запишитесь на сеанс</h2>
+            <form class="feedback__form">
+                <div class="feedback__field-wrapper">
+                    <input type="text" name="name" required />
+                    <label for="name" class="label-name"><span class="content-name">Ваше имя:</span></label>
+                </div>
+                <div class="feedback__field-wrapper">
+                    <input type="text" name="name" required />
+                    <label for="name" class="label-name"><span class="content-name">Номер телефона:</span></label>
+                </div>
+                <div class="feedback__field-wrapper">
+                    <input type="text" name="name" required />
+                    <label for="name" class="label-name"><span class="content-name">Эл. почта:</span></label>
+                </div>
+
+                <div class="feedback__button-wrapper">
+                    <button type="submit" class="feedback__button">Записаться</button>
+                </div>
+            </form>
+            <img class="feedback__image-right" src="./images/right.png" alt="Appointment section tattoo image"/>
         </section>
     </main>
 
