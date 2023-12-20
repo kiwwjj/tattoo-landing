@@ -51,18 +51,18 @@
         <section class="feedback">
             <img class="feedback__image-left" src="./images/left.png" alt="Appointment section tattoo image"/>
             <h2 class="feedback__heading">Запишитесь на сеанс</h2>
-            <form class="feedback__form">
+            <form class="feedback__form" action="http://localhost:4000" method="post">
                 <div class="feedback__field-wrapper">
                     <input type="text" name="name" required />
                     <label for="name" class="label-name"><span class="content-name">Ваше имя:</span></label>
                 </div>
                 <div class="feedback__field-wrapper">
-                    <input type="text" name="name" required />
-                    <label for="name" class="label-name"><span class="content-name">Номер телефона:</span></label>
+                    <input type="text" name="number" required />
+                    <label for="number" class="label-name"><span class="content-name">Номер телефона:</span></label>
                 </div>
                 <div class="feedback__field-wrapper">
-                    <input type="text" name="name" required />
-                    <label for="name" class="label-name"><span class="content-name">Эл. почта:</span></label>
+                    <input type="text" name="email" required />
+                    <label for="email" class="label-name"><span class="content-name">Эл. почта:</span></label>
                 </div>
 
                 <div class="feedback__button-wrapper">
@@ -72,7 +72,5 @@
             <img class="feedback__image-right" src="./images/right.png" alt="Appointment section tattoo image"/>
         </section>
     </main>
-
-    <script src="./js/index.js" type="module"></script>
 </body>
 </html>
